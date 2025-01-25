@@ -30,8 +30,8 @@ public class AutoClickerManager : MonoBehaviour
         }
     }
 
-    public void BuyAutoClicker(int i){
-        autoClickers[i]++;
+    public void BuyAutoClicker(int i, int quantity){
+        autoClickers[i] += quantity;
         // implement buy
     }
 

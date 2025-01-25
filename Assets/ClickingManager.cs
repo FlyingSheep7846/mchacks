@@ -7,6 +7,16 @@ public class ClickingManager : MonoBehaviour
 
     public int multiplier = 1;
 
+    public static ClickingManager instance;
+
+    void Awake(){
+        if (instance == null){
+            instance = this;
+        } else {
+            Destroy(gameObject);
+        }
+    }
+
     public void Click(int amount){
         clicks++;
         feathers += amount;
