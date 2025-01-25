@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "mchacks12.sln"
+    "dotnet.defaultSolution": "mchacks.sln"
 }
