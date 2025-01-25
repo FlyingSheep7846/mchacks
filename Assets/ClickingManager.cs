@@ -7,8 +7,8 @@ public class ClickingManager : MonoBehaviour
 
     public int multiplier = 1;
 
-    public void Click(){
+    public void Click(int amount){
         clicks++;
-        feathers += multiplier;
+        feathers += amount;
     }
 }
