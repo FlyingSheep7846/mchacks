@@ -42,7 +42,7 @@ public class BuyButton : MonoBehaviour
     }
 
     public void UpdateCost(){
-        costText.text = textAmount();
+        costText.text = "Cost: " + textAmount();
     }
 
     public int CostAmount(){
