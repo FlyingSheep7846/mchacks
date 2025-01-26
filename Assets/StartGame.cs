@@ -5,6 +5,6 @@ public class StartGame : MonoBehaviour
 {
     public void StartGameButton()
     {
-        SceneManager.LoadScene("Lilly Game UI"); //load game scene
+        SceneManager.LoadScene(2); //load game scene
     }
 }
