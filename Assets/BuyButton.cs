@@ -39,7 +39,7 @@ public class BuyButton : MonoBehaviour
     }
 
     public void BuyAutoClicker(){
-        autoManager.BuyAutoClicker(type, manager.BuyMult, buyType);
+        autoManager.BuyAutoClicker(type, manager.BuyMult, "");
         ClickingManager.instance.feathers -= totalCost;
         costText.text = "Cost: " + textAmount();
         cost += manager.BuyMult * costChange;
