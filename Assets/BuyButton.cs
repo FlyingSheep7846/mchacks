@@ -11,9 +11,15 @@ public class BuyButton : MonoBehaviour
     [SerializeField] AutoClickerManager autoManager;
     private Button button;
 
+<<<<<<< Updated upstream
     [SerializeField] int type;
     [SerializeField] string buyType;
+=======
+    private AudioSource audioSource;
+>>>>>>> Stashed changes
 
+    [SerializeField] int type;
+    [SerializeField] string buyType;
     private TextMeshProUGUI costText;
     private TextMeshProUGUI ownedText;
 
@@ -28,6 +34,8 @@ public class BuyButton : MonoBehaviour
 
         costText = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         ownedText = transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     void Start(){
@@ -44,6 +52,8 @@ public class BuyButton : MonoBehaviour
         ClickingManager.instance.feathers -= totalCost;
         costText.text = "Cost: " + textAmount();
         cost += manager.BuyMult * costChange;
+
+        audioSource.Play();
 
         ownedText.text = autoManager.autoClickers[type].ToString();
     }

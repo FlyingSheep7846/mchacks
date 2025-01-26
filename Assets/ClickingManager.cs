@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem.XR.Haptics;
 
 public class ClickingManager : MonoBehaviour
 {
@@ -9,7 +10,10 @@ public class ClickingManager : MonoBehaviour
 
     public static ClickingManager instance;
 
+    public AudioSource audioSource;
+
     void Awake(){
+        audioSource = gameObject.GetComponent<AudioSource>();
         if (instance == null){
             instance = this;
         } else {
@@ -19,6 +23,11 @@ public class ClickingManager : MonoBehaviour
 
     public void Click(int amount){
         clicks++;
+<<<<<<< Updated upstream
         feathers += amount * multiplier;
+=======
+        audioSource.Play();
+        feathers += amount;
+>>>>>>> Stashed changes
     }
 }
