@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3d70a1b41c7993f44aea9b449fb86947
+guid: 8c089b6e56b643349b0402ac70fea6b2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6094746308729136528
-    second: multiplierbutton1_0
+      213: 4978424162507891905
+    second: apple1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: multiplierbutton1_0
+      name: apple1_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 7
-        width: 186
-        height: 105
+        x: 5
+        y: 5
+        width: 53
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0956ce7f973e49450800000000000000
-      internalID: 6094746308729136528
+      spriteID: 1c42183266ae61540800000000000000
+      internalID: 4978424162507891905
       vertices: []
       indices: 
       edges: []
