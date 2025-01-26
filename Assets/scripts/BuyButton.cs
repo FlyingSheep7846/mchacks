@@ -31,10 +31,17 @@ public class BuyButton : MonoBehaviour
 
         audioSource = gameObject.GetComponent<AudioSource>();
 
+        costText.text = textAmount();
+        if (buyType == "upgrade") {
+            ownedText.text = autoManager.upgradeMult[type].ToString();
+        }
+        else {
+            ownedText.text = autoManager.autoClickers[type].ToString();
+        }
     }
 
     void Start(){
-        costText.text = textAmount();
+        
     }
 
     void Update(){
