@@ -5,6 +5,8 @@ public class ButtonParticleEffect : MonoBehaviour
     public ParticleSystem clickEffect; // Assign your particle prefab in the Inspector
     [SerializeField] Transform particleParent;
 
+    [SerializeField] GameObject TextPrefab;
+    [SerializeField] Transform textParent;
 
     public void SpawnParticleEffect()
     {
@@ -15,6 +17,8 @@ public class ButtonParticleEffect : MonoBehaviour
         Vector3 worldPosition;
             // Screen Space Overlay: Mouse position is already in screen space
             worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, 0f));
+
+        Instantiate(TextPrefab, textParent);
 
         // Instantiate the particle effect
         Destroy(

@@ -13,8 +13,8 @@ public class BuyButton : MonoBehaviour
 
     [SerializeField] int type;
 
-    [Header("References")]
-    [SerializeField] TextMeshProUGUI costText;
+    private TextMeshProUGUI costText;
+    private TextMeshProUGUI ownedText;
 
     public int cost;
     public int costChange; 
@@ -23,10 +23,13 @@ public class BuyButton : MonoBehaviour
     void Awake(){
         manager = transform.root.GetComponentInChildren<ShopManager>();
         button = GetComponent<Button>();
+
+        costText = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        ownedText = transform.GetChild(2).GetComponent<TextMeshProUGUI>();
     }
 
     void Start(){
-        costText.text = textAmount();
+        costText.text = "Cost: " + textAmount();
     }
 
     void Update(){
@@ -37,8 +40,10 @@ public class BuyButton : MonoBehaviour
     public void BuyAutoClicker(){
         autoManager.BuyAutoClicker(type, manager.BuyMult);
         ClickingManager.instance.feathers -= totalCost;
-        costText.text = textAmount();
+        costText.text = "Cost: " + textAmount();
         cost += manager.BuyMult * costChange;
+
+        ownedText.text = autoManager.autoClickers[type].ToString();
     }
 
     public void UpdateCost(){
