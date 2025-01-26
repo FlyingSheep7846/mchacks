@@ -755,8 +755,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -812, y: -451.37}
-  m_SizeDelta: {x: 40.6804, y: 14.4517}
+  m_AnchoredPosition: {x: -822.8595, y: -451.37}
+  m_SizeDelta: {x: 37.061, y: 14.452}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1553628213
 MonoBehaviour:
@@ -962,8 +962,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 139.519, y: -451}
-  m_SizeDelta: {x: 264.981, y: 13.718}
+  m_AnchoredPosition: {x: 118.576, y: -451}
+  m_SizeDelta: {x: 271.962, y: 13.718}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1666925295
 MonoBehaviour:
@@ -1210,7 +1210,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: marteler le martelet
+  m_text: marteler la martlet
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 645f07543f1119d4fb0940c1d8bbefc8, type: 2}
   m_sharedMaterial: {fileID: 6112863754447465393, guid: 645f07543f1119d4fb0940c1d8bbefc8, type: 2}
