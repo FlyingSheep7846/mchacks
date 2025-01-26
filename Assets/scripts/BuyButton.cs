@@ -1,10 +1,11 @@
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
-public class BuyButton : MonoBehaviour
+public class BuyButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private ShopManager manager;
     [SerializeField] AutoClickerManager autoManager;
@@ -16,6 +17,9 @@ public class BuyButton : MonoBehaviour
     [SerializeField] string buyType;
     private TextMeshProUGUI costText;
     private TextMeshProUGUI ownedText;
+
+    [SerializeField] GameObject tooltip;
+    [SerializeField] float tooltipOffset;
 
 
     public int cost;
@@ -102,5 +106,17 @@ public class BuyButton : MonoBehaviour
         } else {
             return number.ToString("0");
         }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        tooltip.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition - new Vector2(tooltipOffset,0);
+
+        tooltip.SetActive(true);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        tooltip.SetActive(false);
     }
 }
