@@ -1,7 +1,6 @@
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Experimental.AI;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
@@ -11,12 +10,7 @@ public class BuyButton : MonoBehaviour
     [SerializeField] AutoClickerManager autoManager;
     private Button button;
 
-<<<<<<< Updated upstream
-    [SerializeField] int type;
-    [SerializeField] string buyType;
-=======
     private AudioSource audioSource;
->>>>>>> Stashed changes
 
     [SerializeField] int type;
     [SerializeField] string buyType;
@@ -32,34 +26,56 @@ public class BuyButton : MonoBehaviour
         manager = transform.root.GetComponentInChildren<ShopManager>();
         button = GetComponent<Button>();
 
-        costText = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-        ownedText = transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+        costText = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        ownedText = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
 
         audioSource = gameObject.GetComponent<AudioSource>();
+
+        costText.text = textAmount();
+        if (buyType == "upgrade") {
+            ownedText.text = autoManager.upgradeMult[type].ToString();
+        }
+        else {
+            ownedText.text = autoManager.autoClickers[type].ToString();
+        }
     }
 
     void Start(){
-        costText.text = "Cost: " + textAmount();
+        
     }
 
     void Update(){
-
         button.interactable = ClickingManager.instance.feathers >= totalCost;
     }
 
     public void BuyAutoClicker(){
-        autoManager.BuyAutoClicker(type, manager.BuyMult, buyType);
         ClickingManager.instance.feathers -= totalCost;
-        costText.text = "Cost: " + textAmount();
+        autoManager.BuyAutoClicker(type, manager.BuyMult, buyType);
+        if (buyType == "upgrade") {
+            ownedText.text = autoManager.upgradeMult[type].ToString();
+        }
+        else {
+            ownedText.text = autoManager.autoClickers[type].ToString();
+        }
+
+        if (type == 0) { // is "you"
+            if (buyType == "upgrade") { // increase multiplier
+                ClickingManager.instance.upgradeMultiplier += manager.BuyMult;
+            }
+            else { // increase number of 'you's
+                ClickingManager.instance.numberBought += manager.BuyMult;
+            }
+        }
+        
+        costText.text = textAmount();
         cost += manager.BuyMult * costChange;
 
         audioSource.Play();
 
-        ownedText.text = autoManager.autoClickers[type].ToString();
     }
 
     public void UpdateCost(){
-        costText.text = "Cost: " + textAmount();
+        costText.text = textAmount();
     }
 
     public int CostAmount(){
