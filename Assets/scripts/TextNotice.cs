@@ -14,7 +14,7 @@ public class TextNotice : MonoBehaviour
     }
 
     IEnumerator Start(){
-        textmesh.text = "+" + ClickingManager.instance.multiplier;
+        textmesh.text = "+" + ClickingManager.instance.upgradeMultiplier;
 
         LeanTween.alphaCanvas(cg, 0f, 0.4f);
         LeanTween.moveLocalY(gameObject, transform.localPosition.y + 50f, 0.4f);
