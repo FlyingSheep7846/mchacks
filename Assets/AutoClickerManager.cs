@@ -23,7 +23,6 @@ public class AutoClickerManager : MonoBehaviour
             if (clickerTimers[i] >= clickerIntervals[i]){
                 
                 manager.Click(autoClickers[i] * clickerMult[i]);
-                Debug.Log(autoClickers[i] * clickerMult[i]);
                 clickerTimers[i] = 0;
                 
             }
