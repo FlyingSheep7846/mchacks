@@ -19,6 +19,6 @@ public class ClickingManager : MonoBehaviour
 
     public void Click(int amount){
         clicks++;
-        feathers += amount;
+        feathers += amount * multiplier;
     }
 }

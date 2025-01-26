@@ -12,6 +12,7 @@ public class BuyButton : MonoBehaviour
     private Button button;
 
     [SerializeField] int type;
+    [SerializeField] string buyType;
 
     private TextMeshProUGUI costText;
     private TextMeshProUGUI ownedText;
@@ -39,7 +40,7 @@ public class BuyButton : MonoBehaviour
     }
 
     public void BuyAutoClicker(){
-        autoManager.BuyAutoClicker(type, manager.BuyMult, "");
+        autoManager.BuyAutoClicker(type, manager.BuyMult, buyType);
         ClickingManager.instance.feathers -= totalCost;
         costText.text = "Cost: " + textAmount();
         cost += manager.BuyMult * costChange;
